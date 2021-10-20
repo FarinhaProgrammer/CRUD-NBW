@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --orange: #FF7040;
+}
+
+@keyframes bar {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 300px;
+    }
+}
+
+.title{
+    padding-bottom: 5px;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 22pt;
+}
+
+.line{
+    margin: auto;
+    animation: bar 2s;
+    width: 300px;
+    background-color: var(--orange);
+    margin-bottom: 50px;
+}
+
+.text{
+    text-align: center;
+}
+
+.flex-item{
+    margin: 10px;
+}

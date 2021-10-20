@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="title cust">{{customer.name}}</h1>
+<hr class="line">
+<h2 class="text subtitle">{{customer.operation}}</h2>
+<div class="flex-customer">
+    <p class="text flex-item-read"><strong>CNPJ:</strong> {{customer.cnpj}}</p>
+    <p class="text flex-item-read"><strong>Empregados:</strong> {{customer.employees}}</p>
+    <p class="text flex-item-read"><strong>Faturamento:</strong> R${{customer.billing}}</p>
+    <p class="text flex-item-read"><strong>Telefone:</strong> {{customer.phone}}</p>
+    <p class="text flex-item-read"><strong>Celular:</strong> {{customer.mobile}}</p>
+    <p class="text flex-item-read"><strong>Endereço:</strong> {{customer.adress}}</p>
+    <p class="text flex-item-read"><strong>Bairro:</strong> {{customer.district}}</p>
+    <p class="text flex-item-read"><strong>Cidade:</strong> {{customer.city}}</p>
+    <p class="text flex-item-read"><strong>Estado:</strong> {{customer.state}}</p>
+    <p class="text flex-item-read"><strong>Código Postal:</strong> {{customer.zip_code}}</p>
+</div>
+{% endblock %}

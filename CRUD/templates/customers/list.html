@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="title cust">Clientes</h1>
+<hr class="line">
+<div class="customers">
+    {% for i in customers %}
+    <div class="customer">
+        <p class="text flex-item flex-cust">{{i.name}}</p>
+        <p class="text flex-item flex-cust">{{i.operation}}</p>
+        <p class="text flex-item flex-cust">R${{i.billing}}</p>
+        <a href="{% url 'customers:read' pk=i.pk %}" class="flex-item flex-cust"><button class="btn-customer">Detalhes</button></a>
+        <a href="{% url 'customers:update' pk=i.pk %}" class="flex-item flex-cust"><button class="btn-customer">Atualizar</button></a>
+        <a href="{% url 'customers:delete' pk=i.pk %}" class="flex-item flex-cust"><button class="btn-customer">Deletar</button></a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

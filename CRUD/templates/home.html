@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="title">Bem Vindo!</h1>
+<hr class="line">
+<div class="options">
+    <div class="option">
+        <p class="text">Controle todos os clientes cadastrados no sistema.<br><a href="{% url 'customers:list' %}"><button class="btn-option">Ver</button></a></p>     
+    </div>
+    <hr class="vertical option">
+    <div class="option">
+        <p class="text">Cadastre um novo cliente no sistema.<br><a href="{% url 'customers:create' %}"><button class="btn-option">Cadastrar</button></a></p>
+    </div>
+</div>
+{% endblock %}

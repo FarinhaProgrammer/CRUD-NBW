@@ -1,0 +1,39 @@
+:root{
+    --orange: #FF7040;
+}
+
+.flex-customer{
+    text-align: left;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+}
+
+.flex-item-read{
+    width: 30vw;
+}
+
+.subtitle{
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    border: 1px solid var(--orange);
+    border-radius: 30px;
+    border-top: none;
+    border-bottom: none;
+    font-size: 14pt;
+}
+
+strong{
+    color: var(--orange);
+}
+
+@media (max-width: 800px){
+    .flex-item-read{
+        width: 55vw;
+    }
+}

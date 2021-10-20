@@ -5,7 +5,7 @@ from customers.forms import CustomerForm
 def list_customers(request):
     customers = Customer.objects.all()
     qtd = len(customers)
-    return render(request, 'em aberto', {'customers': customers, 'qtd': qtd})
+    return render(request, 'customers/list.html', {'customers': customers, 'qtd': qtd})
 
 
 def create_customer(request):
@@ -78,4 +78,4 @@ def update_customer(request, pk):
 
 def read_customer(request, pk):
     customer = get_object_or_404(Customer, pk=pk)
-    return render(request, 'em aberto', {'customer': customer})
+    return render(request, 'customers/read.html', {'customer': customer})

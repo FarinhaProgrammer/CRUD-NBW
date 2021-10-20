@@ -1,0 +1,62 @@
+header{
+    height: 15vh;
+}
+
+.navbar {
+    transition: all 0.4s;
+    padding-top: 60px;
+}
+
+.navbar .nav-link {
+    color: #FF7040;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #FF7040;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #FF7040;
+    font-size: 22pt;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #FF7040;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #FFFFFF;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #FFFFFF;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #FF7040;
+    }
+}
+
+.teste{
+    height: 8000px;
+    width: 100px;
+    background-color: #FFFFFF;
+}
