@@ -3,12 +3,18 @@ from customers.models import Customer
 from customers.forms import CustomerForm
 
 def list_customers(request):
+    """
+    Esta função lista todos os cliente disponíveis.
+    """
     customers = Customer.objects.all()
     qtd = len(customers)
     return render(request, 'customers/list.html', {'customers': customers, 'qtd': qtd})
 
 
 def create_customer(request):
+    """
+    Esta função recebe os dados do formulário, ou envia um vazio, e então salva os dados no banco de dados.
+    """
     form = CustomerForm()
 
     if request.method == 'POST':
@@ -31,20 +37,26 @@ def create_customer(request):
 
             new_customer.save()
 
-            return redirect(f'/customers/read/{new_customer.pk}/')
+            return redirect(f'/customers/{new_customer.pk}/read/')
         else:
-            return render(request, 'em aberto', {'form': form})
+            return render(request, 'customers/form.html', {'form': form, 'title': 'Cadastrar'})
     else:
-        return render(request, 'em aberto', {'form': form})
+        return render(request, 'customers/form.html', {'form': form, 'title': 'Cadastrar'})
 
 
 def delete_customer(request, pk):
+    """
+    Esta função pega o id do usuário, deleta do banco de dados e redireciona para a página principal.
+    """
     customer = get_object_or_404(Customer, pk=pk)
     customer.delete()
-    return redirect('/')
+    return redirect('/customers/list/')
 
 
 def update_customer(request, pk):
+    """
+    Esta função recebe os dados e então grava no banco de dados.
+    """
     customer =  get_object_or_404(Customer, pk=pk)
     form = CustomerForm(instance=customer)
 
@@ -68,14 +80,17 @@ def update_customer(request, pk):
 
             updated_customer.save()
 
-            return redirect(f'/customers/read/{updated_customer.pk}/')
+            return redirect(f'/customers/{updated_customer.pk}/read/')
         else:
-            return render(request, 'em aberto', {'form': form, 'customer': customer})
+            return render(request, 'customers/form.html', {'form': form, 'customer': customer, 'title': 'Atualizar'})
             
     else:
-        return render(request, 'em aberto', {'form': form, 'customer': customer})
+        return render(request, 'customers/form.html', {'form': form, 'customer': customer, 'title': 'Atualizar'})
 
 
 def read_customer(request, pk):
+    """
+    Esta função retorna os detalhes do cliente clicado.
+    """
     customer = get_object_or_404(Customer, pk=pk)
     return render(request, 'customers/read.html', {'customer': customer})

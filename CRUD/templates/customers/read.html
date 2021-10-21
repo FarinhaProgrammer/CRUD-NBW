@@ -3,17 +3,53 @@
 {% block content %}
 <h1 class="title cust">{{customer.name}}</h1>
 <hr class="line">
+{% if customer.operation %}
 <h2 class="text subtitle">{{customer.operation}}</h2>
+{% else %}
+<h2 class="text subtitle">Não fornecido</h2>
+{% endif %}
 <div class="flex-customer">
     <p class="text flex-item-read"><strong>CNPJ:</strong> {{customer.cnpj}}</p>
+    {% if customer.employees %}
     <p class="text flex-item-read"><strong>Empregados:</strong> {{customer.employees}}</p>
+    {% else %}
+    <p class="text flex-item-read"><strong>Empregados:</strong> Não fornecido</p>
+    {% endif %}
+    {% if customer.billing %}
     <p class="text flex-item-read"><strong>Faturamento:</strong> R${{customer.billing}}</p>
+    {% else %}
+    <p class="text flex-item-read"><strong>Faturamento:</strong> Não fornecido</p>
+    {% endif %}
+    {% if customer.phone %}
     <p class="text flex-item-read"><strong>Telefone:</strong> {{customer.phone}}</p>
+    {% else %}
+    <p class="text flex-item-read"><strong>Telefone:</strong> Não fornecido</p>
+    {% endif %}
     <p class="text flex-item-read"><strong>Celular:</strong> {{customer.mobile}}</p>
+    {% if customer.adress %}
     <p class="text flex-item-read"><strong>Endereço:</strong> {{customer.adress}}</p>
+    {% else %}
+    <p class="text flex-item-read"><strong>Endereço:</strong> Não fornecido</p>
+    {% endif %}
+    {% if customer.district %}
     <p class="text flex-item-read"><strong>Bairro:</strong> {{customer.district}}</p>
+    {% else %}
+    <p class="text flex-item-read"><strong>Bairro:</strong> Não fornecido</p>
+    {% endif %}
+    {% if customer.city %}
     <p class="text flex-item-read"><strong>Cidade:</strong> {{customer.city}}</p>
+    {% else %}
+    <p class="text flex-item-read"><strong>Cidade:</strong> Não fornecido</p>
+    {% endif %}
+    {% if customer.state %}
     <p class="text flex-item-read"><strong>Estado:</strong> {{customer.state}}</p>
+    {% else %}
+    <p class="text flex-item-read"><strong>Estado:</strong> Não fornecido</p>
+    {% endif %}
+    {% if customer.zip_code %}
     <p class="text flex-item-read"><strong>Código Postal:</strong> {{customer.zip_code}}</p>
+    {% else %}
+    <p class="text flex-item-read"><strong>Código Postal:</strong> Não fornecido</p>
+    {% endif %}
 </div>
 {% endblock %}

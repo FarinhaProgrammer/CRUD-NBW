@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1 class="title">{{title}}</h1>
+<hr class="line">
+<form method="post">
+    <div class="flex-form">
+        {% csrf_token %}
+        {{form.as_p}}
+    </div>
+    <div class="div-btn">
+        <button type="submit" class="sub-btn">Enviar</button>
+    </div>
+</form>
+{% endblock %}
